@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS浮动</title>
+    <style type="text/css">
+        #one{
+            border: 1px solid red;
+            width: 300px;
+            height: 150px;
+            /*浮动框不在普通的流中，所以文旦搞得普通流中的块框表现的像浮动框不存在一样*/
+            float: left;
+            clear: both;/* 清除浮动 */
+        }
+        #two{
+            border: 1px solid black;
+            width: 300px;
+            height: 150px;
+        }
+        #three{
+            border: 1px solid blue;
+            width: 300px;
+            height: 150px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        One
+    </div>
+    <div id="two">
+        Two
+    </div>
+    <div id="three">
+        Three
+    </div>
+</body>
+</html>
