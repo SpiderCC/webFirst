@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div和span效果演示</title>
+    <style>
+        span{
+            font_size:30px;
+        }
+        div{
+            border: solid red 1px;
+        }
+        .div2{
+            font-size: 30px;
+        }
+        #div3{
+            color: black;
+        }
+        div p{
+            color: green;
+        }
+        input[type="text"]{
+            background-color: red;
+        }
+        input[type="password"]{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!--单独显示没有意义-->
+    <div>
+        Young and beautiful.
+    </div>
+    <!--类选择器-->
+    <div class="div2">
+        Shanghai Station.
+    </div>
+    <!--ID选择器-->
+    <div id="div3">
+        Nanjing Station.
+    </div>
+    <!--层级选择器-->
+    <div>
+        <p>
+            Beijing Station.
+        </p>
+    </div>
+    <span>
+        Span widget.
+    </span><br />
+    Username:<input type="text" name="username"><br />
+    Password:<input type="password" name="password">
+</body>
+</html>

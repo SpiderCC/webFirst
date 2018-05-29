@@ -1,0 +1,9 @@
+div{
+    color: green;
+}
+div p{
+    color: blue;
+}
+input[type="text"]{
+    background-color: red;
+}
