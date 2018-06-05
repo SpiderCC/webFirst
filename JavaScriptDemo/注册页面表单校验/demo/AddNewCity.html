@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AddNewCity</title>
+        <script>
+            window.onload = function () {
+                document.getElementById("btn").onclick = function () {
+                    var ele = document.getElementById("ul1");
+                    var node = document.createTextNode("Shenzhen");
+                    var newEle = document.createElement("li");
+                    newEle.appendChild(node);
+                    ele.appendChild(newEle);
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Add City" id="btn">
+        <ul id="ul1">
+            <li>Beijing</li>
+            <li>Shanghai</li>
+            <li>Tianjin</li>
+        </ul>
+
+    </body>
+</html>
