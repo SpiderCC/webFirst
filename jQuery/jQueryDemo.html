@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQueryDemo</title>
+        <!--导入jQuerylib-->
+        <!--命名约定：对象变量名建议以$开始-->
+        <script src="../jsLib/jquery-1.11.0.js" type="text/javascript"></script>
+        <script>
+            $(function(){
+                alert("hello jquery");
+            });
+
+            window.onload = function () {
+                alert("zhangshan");
+            }
+
+            jQuery(document).ready(function () {
+                alert("lisi");
+            });
+            // jQuery的加载比JS要快，且不存在覆盖问题，加载的时候顺序执行
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
