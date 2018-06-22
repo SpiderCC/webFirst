@@ -3,36 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>使用JavaScript完成表单注册界面</title>
+    <script type="text/javascript" src="../../jsLib/jquery-1.8.3.js"></script>
     <script>
-        function checkForm(){
-            var uValue = document.getElementById("user").value;
-            alert(uValue);
+        // function checkForm(){
+        //     var uValue = document.getElementById("user").value;
+        //     alert(uValue);
+        //
+        //     // alert(uValue);
+        // }
+        //
+        // var cities = new Array(3);
+        // cities[0] = new Array("南京","苏州","无锡","常州");
+        // cities[1] = new Array("郑州","洛阳","信阳","安阳");
+        // cities[2] = new Array("济南","青岛","烟台","菏泽");
+        // cities[3] = new Array("合肥","芜湖","安庆","铜陵");
+        //
+        // function CityChanged(val) {
+        //     var cityList = document.getElementById("city");
+        //     cityList.length = 0;
+        //
+        //     for(var i =0;i<cities.length;i++){
+        //         if(val == i){
+        //             for(var j = 0;j<cities[i].length;j++){
+        //                 var node = document.createTextNode(cities[i][j]);
+        //                 var ele = document.createElement("option");
+        //                 ele.appendChild(node);
+        //                 cityList.appendChild(ele);
+        //             }
+        //         }
+        //     }
+        //
+        // }
 
-            // alert(uValue);
-        }
+        // 使用jQuery完成二级联动
+        $(function () {
+            var cities = new Array(3);
+            cities[0] = new Array("南京","苏州","无锡","常州");
+            cities[1] = new Array("郑州","洛阳","信阳","安阳");
+            cities[2] = new Array("济南","青岛","烟台","菏泽");
+            cities[3] = new Array("合肥","芜湖","安庆","铜陵");
+            
+            $("#province").change(function () {
+                $("#city").empty();
 
-        var cities = new Array(3);
-        cities[0] = new Array("南京","苏州","无锡","常州");
-        cities[1] = new Array("郑州","洛阳","信阳","安阳");
-        cities[2] = new Array("济南","青岛","烟台","菏泽");
-        cities[3] = new Array("合肥","芜湖","安庆","铜陵");
-
-        function CityChanged(val) {
-            var cityList = document.getElementById("city");
-            cityList.length = 0;
-
-            for(var i =0;i<cities.length;i++){
-                if(val == i){
-                    for(var j = 0;j<cities[i].length;j++){
-                        var node = document.createTextNode(cities[i][j]);
+                var val = this.value;
+                $.each(cities,function (i,n) {
+                    if(val == i)
+                    $.each(cities[i],function (j,m) {
+                        var node = document.createTextNode(m);
                         var ele = document.createElement("option");
-                        ele.appendChild(node);
-                        cityList.appendChild(ele);
-                    }
-                }
-            }
+                        $(ele).append(node);
+                        $(ele).appendTo($("#city"));
+                    })
+                })
 
-        }
+
+
+            })
+        })
+
     </script>
 </head>
 <body>
@@ -133,7 +162,7 @@
                     <tr>
                         <td>籍贯</td>
                         <td>
-                            <select onchange="CityChanged(this.value)">
+                            <select onchange="CityChanged(this.value)" id="province">
                                 <option>--请选择--</option>
                                 <option value="0">江苏</option>
                                 <option value="1">河南</option>
